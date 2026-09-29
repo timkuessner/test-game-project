@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bcnq2ukl6d0k1"]
+
+[ext_resource type="Texture2D" uid="uid://b1buviajuthr4" path="res://tile_0044.png" id="1_2y4ie"]
+[ext_resource type="Script" uid="uid://7lt4hop5v00f" path="res://herz.gd" id="1_17tbt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kej8o"]
+radius = 7.499999
+
+[node name="Herz" type="Node2D" unique_id=1262651007]
+texture_filter = 1
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_17tbt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1211728819]
+texture = ExtResource("1_2y4ie")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2087548439]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1934100586]
+shape = SubResource("CircleShape2D_kej8o")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
